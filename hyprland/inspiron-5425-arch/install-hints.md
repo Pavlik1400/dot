@@ -63,12 +63,12 @@ mount /dev/nvme0n1p{boot number} /mnt/boot
 
 ## Archlinux install & setup
 ```bash
-pacman  -Syy                                # Update pacman
-pacstrap -K /mnt base linux linux-firmware  # Essential packages
+pacman  -Syy                                            # Update pacman
+pacstrap -K /mnt base base-devel linux linux-firmware   # Essential packages
 
-genfstab -U /mnt >> /mnt/etc/fstab          # fstab
+genfstab -U /mnt >> /mnt/etc/fstab                      # fstab
 
-arch-chroot /mnt                            # change root
+arch-chroot /mnt                                        # change root
 pacman -S vim sudo
 
 # Time zone
