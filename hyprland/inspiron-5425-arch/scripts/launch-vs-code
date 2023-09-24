@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+sed -i 's/native/custom/' /home/pasha/.config/Code\ -\ Insiders/User/settings.json
+code-insiders --enable-features=WaylandWindowDecorations  --ozone-platform-hint=wayland # & disown
+sleep 5
+sed -i 's/custom/native/' /home/pasha/.config/Code\ -\ Insiders/User/settings.json
