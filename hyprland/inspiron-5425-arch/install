@@ -197,10 +197,10 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     done
 
     # Setup enviroment variables
-    echo 'GDK_BACKEND=wayland' >> /etc/environment
-    echo 'QT_WAYLAND_DISABLE_WINDOWDECORATION=1' >> /etc/environment
-    echo 'QT_QPA_PLATFORM=wayland' >> /etc/environment
-    echo 'QT_STYLE_OVERRIDE=kvantum' >> /etc/environment
+    sudo echo 'GDK_BACKEND=wayland' >> /etc/environment
+    sudo echo 'QT_WAYLAND_DISABLE_WINDOWDECORATION=1' >> /etc/environment
+    sudo echo 'QT_QPA_PLATFORM=wayland' >> /etc/environment
+    sudo echo 'QT_STYLE_OVERRIDE=kvantum' >> /etc/environment
 
     # Start the bluetooth service
     echo -e "$CNT - Starting the Bluetooth Service..."
