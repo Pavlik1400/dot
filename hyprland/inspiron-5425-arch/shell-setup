@@ -1,17 +1,19 @@
 #!/bin/bash
 
+source common
+
 read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to configure zsh, vim? (y,n) ' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "$CNT - Installing required packages..."
     for SOFTWR in make cmake ncdu wget zsh git vim exa bat
     do
         #First lets see if the package is there
-        if yay -Qs $SOFTWR > /dev/null ; then
+        if sudo pacman -Qs $SOFTWR > /dev/null ; then
             echo -e "$COK - $SOFTWR is already installed."
         else
             echo -e "$CNT - Now installing $SOFTWR ..."
-            yay -S --noconfirm $SOFTWR &>> $INSTLOG
-            if yay -Qs $SOFTWR > /dev/null ; then
+            sudo pacman -S --noconfirm $SOFTWR &>> $INSTLOG
+            if sudo pacman -Qs $SOFTWR > /dev/null ; then
                 echo -e "$COK - $SOFTWR was installed."
             else
                 echo -e "$CER - $SOFTWR install had failed, please check the install.log"
