@@ -275,50 +275,51 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
 fi
 
 
-### Copy Config Files ###
-read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to configure zsh, vim? (y,n) ' CFG
-if [[ $CFG == "Y" || $CFG == "y" ]]; then
-    echo -e "$CNT - Installing required packages..."
-    for SOFTWR in zsh git vim exa bat
-    do
-        #First lets see if the package is there
-        if yay -Qs $SOFTWR > /dev/null ; then
-            echo -e "$COK - $SOFTWR is already installed."
-        else
-            echo -e "$CNT - Now installing $SOFTWR ..."
-            yay -S --noconfirm $SOFTWR &>> $INSTLOG
-            if yay -Qs $SOFTWR > /dev/null ; then
-                echo -e "$COK - $SOFTWR was installed."
-            else
-                echo -e "$CER - $SOFTWR install had failed, please check the install.log"
-                exit
-            fi
-        fi
-    done
+### Setup shell ###
+./shell-setup
+# read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to configure zsh, vim? (y,n) ' CFG
+# if [[ $CFG == "Y" || $CFG == "y" ]]; then
+#     echo -e "$CNT - Installing required packages..."
+#     for SOFTWR in zsh git vim exa bat
+#     do
+#         #First lets see if the package is there
+#         if yay -Qs $SOFTWR > /dev/null ; then
+#             echo -e "$COK - $SOFTWR is already installed."
+#         else
+#             echo -e "$CNT - Now installing $SOFTWR ..."
+#             yay -S --noconfirm $SOFTWR &>> $INSTLOG
+#             if yay -Qs $SOFTWR > /dev/null ; then
+#                 echo -e "$COK - $SOFTWR was installed."
+#             else
+#                 echo -e "$CER - $SOFTWR install had failed, please check the install.log"
+#                 exit
+#             fi
+#         fi
+#     done
 
-    echo -e "$CNT - Configuring oh-my-zsh..."
-    OH_MY_ZSH_PATH="$HOME/.oh-my-zsh"
-    OH_MY_ZSH_LINK="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
-    CHSH=yes RUNZSH=no sh -c "$(wget $OH_MY_ZSH_LINK -O -)" 2>&1 | tee $INSTLOG
+#     echo -e "$CNT - Configuring oh-my-zsh..."
+#     OH_MY_ZSH_PATH="$HOME/.oh-my-zsh"
+#     OH_MY_ZSH_LINK="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
+#     CHSH=yes RUNZSH=no sh -c "$(wget $OH_MY_ZSH_LINK -O -)" 2>&1 | tee $INSTLOG
 
-    # syntax highlighting
-    SYNTAX_HIGHLIGHTING_PATH="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
-    git clone $OH_MY_ZSH_SYNTAX_HIGHLIGHTING $SYNTAX_HIGHLIGHTING_PATH
+#     # syntax highlighting
+#     SYNTAX_HIGHLIGHTING_PATH="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+#     git clone $OH_MY_ZSH_SYNTAX_HIGHLIGHTING $SYNTAX_HIGHLIGHTING_PATH
 
-    # power 10k
-    echo -e "$CNT - p10k theme..."
-    P10K_INSTALL_PATH="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
-    POWER_10_K_LINK="https://github.com/romkatv/powerlevel10k.git"
-    git clone --depth=1 $POWER_10_K_LINK $P10K_INSTALL_PATH
+#     # power 10k
+#     echo -e "$CNT - p10k theme..."
+#     P10K_INSTALL_PATH="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+#     POWER_10_K_LINK="https://github.com/romkatv/powerlevel10k.git"
+#     git clone --depth=1 $POWER_10_K_LINK $P10K_INSTALL_PATH
 
-    # Copy config files
-    echo -e "$CNT - Copy zsh and vim config files..."
-    cp .zshrc $HOME
-    cp .p10k.zsh $HOME
-    cp .vimrc $HOME
-    cp -r .vimrc $HOME
-    vim +'PlugInstall --sync' +qa
-fi
+#     # Copy config files
+#     echo -e "$CNT - Copy zsh and vim config files..."
+#     cp .zshrc $HOME
+#     cp .p10k.zsh $HOME
+#     cp .vimrc $HOME
+#     cp -r .vim $HOME
+#     vim +'PlugInstall --sync' +qa
+# fi
 
 ### Script is done ###
 echo -e "$CNT - Script had completed!"
