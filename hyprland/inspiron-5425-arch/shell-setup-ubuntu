@@ -13,8 +13,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     CHSH=yes RUNZSH=no sh -c "$(wget $OH_MY_ZSH_LINK -O -)" 2>&1 | tee $INSTLOG
 
     # syntax highlighting
-    SYNTAX_HIGHLIGHTING_PATH="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
-    git clone $OH_MY_ZSH_SYNTAX_HIGHLIGHTING $SYNTAX_HIGHLIGHTING_PATH
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
     # power 10k
     echo -e "$CNT - p10k theme..."
