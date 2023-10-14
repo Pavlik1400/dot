@@ -1,0 +1,33 @@
+[global_config]
+  scroll_tabbar = True
+[keybindings]
+  split_horiz = <Primary>parenright
+  split_vert = <Primary>parenleft
+  switch_to_tab_1 = <Alt>1
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_5 = <Alt>5
+  switch_to_tab_6 = <Alt>6
+  switch_to_tab_7 = <Alt>7
+  switch_to_tab_8 = <Alt>8
+  switch_to_tab_9 = <Alt>9
+  switch_to_tab_10 = <Alt>0
+[profiles]
+  [[default]]
+    background_type = transparent
+    font = JetBrainsMonoNL Nerd Font Propo 12
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    use_system_font = False
+    use_theme_colors = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]

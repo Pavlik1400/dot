@@ -116,7 +116,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 
     #Stage 1
     echo -e "\n$CNT - Stage 1 - Installing main components, this may take a while..."
-    for SOFTWR in hyprland kitty waybar swww swaylock-effects wofi wlogout mako xdg-desktop-portal-hyprland swappy grim slurp thunar
+    for SOFTWR in hyprland waybar swww swaylock-effects wofi wlogout mako xdg-desktop-portal-hyprland swappy grim slurp thunar terminator# kitty
     do
         #First lets see if the package is there
         if yay -Qs $SOFTWR > /dev/null ; then
@@ -220,7 +220,7 @@ fi
 read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to copy config files? (y,n) ' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "$CNT - Copying config files..."
-    for DIR in hypr kitty mako swaylock waybar wlogout wofi Kvantum nwg-look keepassxc
+    for DIR in hypr mako swaylock waybar wlogout wofi Kvantum nwg-look keepassxc terminator # kitty
     do 
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then 
