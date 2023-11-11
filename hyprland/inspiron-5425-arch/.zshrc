@@ -1,3 +1,6 @@
+setopt PROMPT_CR
+setopt PROMPT_SP
+export PROMPT_EOL_MARK=""
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -45,11 +48,12 @@ alias jecb="journalctl -b -p err..crit"
 alias sps="sudo pacman -S"
 alias sp="sudo pacman"
 
+alias vscode=/home/pasha/scripts/launch-vs-code
 # Ubuntu related
-alias upd="sudo apt update && sudo apt upgrade"
-alias inst="sudo apt install"
-alias rem="sudo apt remove"
-alias purge="sudo apt purge"
+#alias upd="sudo apt update && sudo apt upgrade"
+#alias inst="sudo apt install"
+#alias rem="sudo apt remove"
+#alias purge="sudo apt purge"
 
 # Synching
 alias Allup="rclone sync ~/Documents/brain2/All/ gdrive:sync/All/"
@@ -63,7 +67,7 @@ alias acconda="aconda; conda activate "
 alias dconda="conda deactivate"
 
 # Other 
-alias updatessh="eval \"$(ssh-agent -s)\";ssh-add ~/.ssh/scanner; ssh-add ~/.ssh/github"
+alias add-key="source ~/scripts/start-ssh-agent.sh && ssh-add"
 alias pctl="powerprofilesctl"
 alias matlab="/home/pasha/Documents/diploma/matlab/bin/matlab"
 
@@ -80,6 +84,7 @@ export LANG=en_US.UTF-8
 export PATH="$PATH:/home/pasha/.local/bin/"
 export PATH="$PATH:/home/pasha/.local/share/gem/ruby/3.0.0/bin"
 export PATH="$PATH:/home/pasha/Documents/diploma/riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14/bin"
+export PATH="$PATH:/home/pasha/.cargo/bin"
 # export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/pasha/Documents/diploma/matlab/bin/glnxa64"
 
 # seed up press and hold action of all keys
@@ -91,3 +96,11 @@ unsetopt correct
 # Ctrl + backspace Removes the whole word
 bindkey '^H' backward-kill-word
 bindkey '5~' kill-word
+export QT_STYLE_OVERRIDE=kvantum
+#export QT_QPA_PLATFORMTHEME=qt6ct
+#export QT_QPA_PLATFORMTHEME=qt5ct
+#export QT_QPA_PLATFORM=wayland
+export GDK_BACKEND=wayland
+export QT_QPA_PLATFORM="wayland"
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+#export QT_QPA_PLATFORMTHEME="qt5ct"
