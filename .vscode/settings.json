@@ -1,0 +1,167 @@
+{
+    "debug.allowBreakpointsEverywhere": true,
+    "markdown-preview-enhanced.previewTheme": "github-dark.css",
+    // # General settings
+    // ## Look:
+    "workbench.colorTheme": "Monokai Pro",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontSize": 12,
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontFamily": "'Fira Code', monospace",
+    "editor.fontFamily": "'Fira Code', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "400",
+    // # VIM
+    "editor.suggestSelection": "first",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "J"
+            ],
+            "commands": [
+                "editor.action.moveLinesDownAction"
+            ]
+        }, // moveLineDown
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.moveLinesUpAction"
+            ]
+        }, // moveLineUp
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        }, // indent right
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        }, // indent left
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        }, // indent right
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        }, // indent left
+    ],
+    "vim.handleKeys": {
+        "<C-c>": false,
+        "<C-v>": false,
+        "<C-x>": false,
+        "<C-f>": false,
+        "<C-a>": false,
+        "<C-w>": false,
+        "<C-b>": false,
+        "<C-m>": false,
+        "<C-p>": false,
+    },
+    // ## Other
+    "editor.rulers": [
+        100,
+        120
+    ],
+    "terminal.integrated.scrollback": 50000,
+    "diffEditor.ignoreTrimWhitespace": false,
+    // ## Sexy smooth animations
+    "editor.cursorSurroundingLines": 15,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorBlinking": "phase",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.smoothScrolling": true,
+    // # JSON
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    // # CMAKE
+    "cmake.configureOnOpen": true,
+    "cmake.configureOnEdit": false,
+    "cmake.generator": "Unix Makefiles",
+    "cmake.parallelJobs": 16,
+    "cmake.buildDirectory": "${workspaceRoot}/build_${buildType}",
+    "cmake.configureEnvironment": {
+        "ENABLE_EXAMPLES": "ON",
+        // "CPM_SOURCE_CACHE": "/development/.cache_vscode/CPM"
+        // "CPM_SOURCE_CACHE": "/home/softserve_0/pasha/.cache_vscode/CPM"
+    },
+    "cmake.configureSettings": {
+        "TRANSPILER_TESTS": "ON",
+        "TRANSPILER_DEBUG_LOG": "ON",
+        "NORMALIZER_DEBUG_LOG": "ON",
+    },
+    "python.condaPath": "/home/pasha/anaconda3/envs/SWA/bin/python3",
+    "python.languageServer": "Pylance",
+    "jupyter.askForKernelRestart": false,
+    "notebook.output.textLineLimit": 300,
+    "python.formatting.provider": "none",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "100"
+    ],
+    "python.linting.enabled": true,
+    "redhat.telemetry.enabled": false,
+    // # Other
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "window.titleBarStyle": "custom",
+    // "window.menuBarVisibility": "visible",
+    "[cpp]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "[systemverilog]": {
+        "editor.defaultFormatter": "mshr-h.veriloghdl"
+    },
+    "[verilog]": {
+        "editor.defaultFormatter": "bmpenuelas.systemverilog-formatter-vscode"
+    },
+    "testMate.cpp.log.userId": "15d32a523f23256f067f0dd84b92e65fd3e33cb4",
+    "editor.minimap.enabled": false,
+    "[cuda-cpp]": {
+        "editor.wordBasedSuggestions": "off",
+        "editor.suggest.insertMode": "replace",
+        "editor.semanticHighlighting.enabled": true
+    },
+    "files.associations": {
+        "*.cu": "cuda-cpp",
+        "*.json": "jsonc",
+        "*.okl": "cpp"
+    },
+    "files.autoSave": "afterDelay",
+    "workbench.editor.empty.hint": "hidden",
+    "zig.zigPath": "/bin/zig",
+    "zig.zls.enabled": true,
+    "zig.zls.path": "",
+    "zig.path": "",
+    "zig.initialSetupDone": true,
+    "remote.autoForwardPortsSource": "hybrid",
+    "cmake.showOptionsMovedNotification": false,
+    "window.zoomLevel": 1,
+    "gitlens.mode.active": "zen",
+    // "files.insertFinalNewline": true,
+    "clangd.path": "/home/phile/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/17.0.3/clangd_17.0.3/bin/clangd",
+}
