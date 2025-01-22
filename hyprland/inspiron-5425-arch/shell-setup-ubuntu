@@ -28,4 +28,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     cp .vimrc $HOME
     cp -r .vim $HOME
     vim +'PlugInstall --sync' +qa
+
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
 fi

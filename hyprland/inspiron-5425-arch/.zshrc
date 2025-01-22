@@ -55,12 +55,6 @@ alias vscode=/home/pasha/scripts/launch-vs-code
 #alias rem="sudo apt remove"
 #alias purge="sudo apt purge"
 
-# Synching
-alias Allup="rclone sync ~/Documents/brain2/All/ gdrive:sync/All/"
-alias Alldown="rclone sync gdrive:sync/All/ ~/Documents/brain2/All/"
-alias docsup="rclone sync /home/pasha/docs/ gdrive:docs/"
-alias docsdown="rclone sync gdrive:docs/ /home/pasha/docs/"
-
 # Python
 alias aconda="source /home/pasha/aconda.sh"
 alias acconda="aconda; conda activate "
@@ -69,7 +63,7 @@ alias dconda="conda deactivate"
 # Other 
 alias add-key="source ~/scripts/start-ssh-agent.sh && ssh-add"
 alias pctl="powerprofilesctl"
-alias matlab="/home/pasha/Documents/diploma/matlab/bin/matlab"
+# alias matlab="/home/pasha/Documents/diploma/matlab/bin/matlab"
 
 # This is added to fix tilix problems
 #if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
@@ -81,10 +75,10 @@ export EDITOR="vim"
 # fix display autocomplete bug in zsh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export PATH="$PATH:/home/pasha/.local/bin/"
-export PATH="$PATH:/home/pasha/.local/share/gem/ruby/3.0.0/bin"
-export PATH="$PATH:/home/pasha/Documents/diploma/riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14/bin"
-export PATH="$PATH:/home/pasha/.cargo/bin"
+# export PATH="$PATH:/home/pasha/.local/bin/"
+# export PATH="$PATH:/home/pasha/.local/share/gem/ruby/3.0.0/bin"
+# export PATH="$PATH:/home/pasha/Documents/diploma/riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14/bin"
+# export PATH="$PATH:/home/pasha/.cargo/bin"
 # export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/pasha/Documents/diploma/matlab/bin/glnxa64"
 
 # seed up press and hold action of all keys
